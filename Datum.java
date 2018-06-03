@@ -31,21 +31,7 @@ public class Datum {
 	}
 	
 	
-/**--------------------------------------------------------------------------
- * @fn 			public Datum()
- * @brief 		Construct fonction initialisation with Jahr = 1970, Monat = 1,
- * 				Tag = 1
- * @return		nothing 
- * @param		nothing
- * @author		Gabriel Bastien
- * @date		09.04.2018
- ----------------------------------------------------------------------------*/
-	public Datum() {
-		this.iJahr = 1970;
-		this.iMonat = 1;
-		this.iTag = 1;
-		iAnzahlDatumObjekte++;
-	}
+
 /**--------------------------------------------------------------------------
  * @fn 			public Datum(int neuTag, int neuMonat, int neuJahr)
  * @brief 		Construct fonction 
