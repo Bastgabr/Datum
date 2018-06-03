@@ -7,9 +7,10 @@ public class Datum {
 	private int iJahr;
 	private int iMonat;
 	private int iTag;
-	
+	private int iMin;
 	private static int iAnzahlDatumObjekte = 0;
 	
+
 
 	public int getiJahr() {
 		return iJahr;
