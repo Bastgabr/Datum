@@ -30,17 +30,7 @@ public class Datum {
 		this.iTag = iTag;
 	}
 	
-	///Newbranch changes
-	
 
-/**--------------------------------------------------------------------------
- * @fn 			public Datum(int neuTag, int neuMonat, int neuJahr)
- * @brief 		Construct fonction 
- * @return		nothing 
- * @param		int neuTag, int neuMonat, int neuJahr
- * @author		Gabriel Bastien
- * @date		09.04.2018
-----------------------------------------------------------------------------*/
 	public Datum(int neuTag, int neuMonat, int neuJahr){
 		boolean bDatumIstOK;
 		bDatumIstOK = bpruefeDatum(neuJahr, neuMonat, neuTag);
@@ -56,14 +46,7 @@ public class Datum {
 			this.iTag = 1;
 		}
 	}
-/**--------------------------------------------------------------------------
- * @fn 			public Datum(Datum anderesDatum)
- * @brief 		Construct fonction 
- * @return		nothing 
- * @param		Datum anderesDatum
- * @author		Gabriel Bastien
- * @date		09.04.2018
-----------------------------------------------------------------------------*/
+
 	public Datum(Datum anderesDatum) {
 		this.iJahr = anderesDatum.iJahr;
 		this.iMonat = anderesDatum.iMonat;
@@ -71,14 +54,7 @@ public class Datum {
 		iAnzahlDatumObjekte++;
 	}
 
-/**--------------------------------------------------------------------------
- * @fn 			public boolean bpruefeDatum(int iJahr,int iMonat,int iTag)
- * @brief 		Test if Date is valid
- * @return		true if Valid / false if invalid
- * @param		int iJahr, int iMonat, int iTag
- * @author		Gabriel Bastien
- * @date		09.04.2018
-----------------------------------------------------------------------------*/	
+	
 	public boolean bpruefeDatum(int iJahr,int iMonat,int iTag) {
 		boolean bMonatgultig;
 		boolean bTaggultig;
@@ -100,14 +76,7 @@ public class Datum {
 		}
 		else return false;
 	}
-/**--------------------------------------------------------------------------
- * @fn 			public boolean bsetDatum(int neuTag, int neuMonat, int neuJahr)
- * @brief 		Redefine Attributes of an  existing Object 
- * @return		true if Date is valid / false if Date invalid 
- * @param		int neuTag, int neuMonat, int neuJahr
- * @author		Gabriel Bastien
- * @date		09.04.2018
-----------------------------------------------------------------------------*/
+
 	public boolean bsetDatum(int neuTag, int neuMonat, int neuJahr) {
 		if( bpruefeDatum(neuJahr, neuMonat, neuTag)) {	//Test if Date is Valid
 			this.iJahr = neuJahr;						//Set Attributes
@@ -118,26 +87,12 @@ public class Datum {
 		else return false;								//Return false if Date is invalid
 	}
 
-/**--------------------------------------------------------------------------
- * @fn 			public String toString()
- * @brief 		Convert Obj Attributes to String
- * @return		String "dd.mm.yyy"
- * @param		nothing
- * @author		Gabriel Bastien
- * @date		09.04.2018
-----------------------------------------------------------------------------*/
+
 	public String DatumtoString(){ 
 		DecimalFormat df = new DecimalFormat("00");
 		return ""+df.format(this.iTag) +"."+df.format(this.iMonat) +"."+this.iJahr;
 	}
-/**--------------------------------------------------------------------------
- * @fn 			public boolean istVorher(Datum anderesDatum)
- * @brief 		Test if the Date object is before the given Date object
- * @return		true if the Date object is before the given Date object / False if not
- * @param		Datum anderesDatum
- * @author		Gabriel Bastien
- * @date		09.04.2018
-----------------------------------------------------------------------------*/
+
 	public boolean istVorher(Datum anderesDatum) {
 		if(anderesDatum.iJahr == this.iJahr)
 		{
@@ -165,14 +120,7 @@ public class Datum {
 		}
 		else return false;
 	}
-/**--------------------------------------------------------------------------
- * @fn 			public Datum addiereTag()
- * @brief 		Add a day to the given Date 
- * @return		Datum
- * @param		nothing
- * @author		Gabriel Bastien
- * @date		09.04.2018
-----------------------------------------------------------------------------*/
+
 	public Datum addiereTag() {
 		Datum Tagadded = new Datum(this.iTag,this.iMonat,this.iJahr);
 		Tagadded.iTag++;
@@ -189,26 +137,12 @@ public class Datum {
 			}
 		}	
 	}
-/**--------------------------------------------------------------------------
- * @fn 			public int getAnzahlDatumObjekte()
- * @brief 		Give back the number of created objects
- * @return		int
- * @param		nothing
- * @author		Gabriel Bastien
- * @date		09.04.2018
-----------------------------------------------------------------------------*/
+
 	public int getAnzahlDatumObjekte() {
 		return iAnzahlDatumObjekte-1; //Minus 1 because AddiereTag is creating a new object to be able to return an Object 
 	}
 	
-/**--------------------------------------------------------------------------
- * @fn 			private static boolean Schaltjahr(int iJahr)
- * @brief 		Test if year is a Lapyear 
- * @return		true if year is a Lapyear / false if not 
- * @param		int iJahr
- * @author		Gabriel Bastien
- * @date		09.04.2018
-----------------------------------------------------------------------------*/
+
 	private static boolean Schaltjahr(int iJahr) {
 		if (iJahr % 4 == 0) {
 			if (iJahr % 100 == 0 && iJahr % 400 == 0) {
@@ -223,28 +157,14 @@ public class Datum {
 		return false;
 	}
 	
-/**--------------------------------------------------------------------------
- * @fn 			private boolean bPruefeMonat(int iMonat)
- * @brief 		Test if Month number is Valid
- * @return		true if Valid / false if invalid
- * @param		int iMonat
- * @author		Gabriel Bastien
- * @date		09.04.2018
-----------------------------------------------------------------------------*/	
+	
 	private boolean bPruefeMonat(int iMonat)
 	{
 		if(iMonat >= 1 && iMonat <= 12)
 			return true;
 		else return false;
 	}
-/**--------------------------------------------------------------------------
- * @fn 			private boolean bPruefeTag(int iJahr, int iMonat, int iTag)
- * @brief 		Test if Day number is valid (depending on the month and year)
- * @return		true if Valid / false if invalid
- * @param		int iJahr, int iMonat, int iTag
- * @author		Gabriel Bastien
- * @date		09.04.2018
-----------------------------------------------------------------------------*/
+
 	private boolean bPruefeTag(int iJahr, int iMonat, int iTag)
 	{
 		boolean bIstSchlatjahr;
