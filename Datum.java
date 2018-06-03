@@ -10,15 +10,6 @@ public class Datum {
 	
 	private static int iAnzahlDatumObjekte = 0;
 	
-	
-	// New Comment 
-	
-	
-	public toString(){
-		//TODO
-	}
-	
-	//================================
 
 	public int getiJahr() {
 		return iJahr;
