@@ -10,6 +10,13 @@ public class Datum {
 	
 	private static int iAnzahlDatumObjekte = 0;
 	
+	
+	// New Comment 
+	
+	
+	
+	
+	//================================
 //================Setter and Getter====================================
 	public int getiJahr() {
 		return iJahr;
