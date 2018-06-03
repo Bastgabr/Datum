@@ -17,7 +17,7 @@ public class Datum {
 	
 	
 	//================================
-//================Setter and Getter====================================
+
 	public int getiJahr() {
 		return iJahr;
 	}
