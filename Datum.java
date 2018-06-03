@@ -10,22 +10,7 @@ public class Datum {
 	private int iMin;
 	private static int iAnzahlDatumObjekte = 0;
 	
-	
-	// New Comment 
-	
-	
-	public toString(){
-		//TODO
-		
-		
-		
-		
-		
-		//End
-	}
-	
-	
-	//================================
+
 
 	public int getiJahr() {
 		return iJahr;
